@@ -5,15 +5,15 @@ services:
     stdin_open: true
     tty: true        
 
-#  web:
-#    image: "docker.io/nginx"
-#   volumes:
-#     - ./templates:/etc/nginx/templates
-#   ports:
-#     - "8080:80"
-#   environment:
-#     - NGINX_HOST=foobar.com
-#     - NGINX_PORT=80
+  web:
+    image: "docker.io/nginx"
+    volumes:
+      - web_data:/etc/nginx/templates
+    ports:
+      - "8080:80"
+    environment:
+      - NGINX_HOST=foobar.com
+      - NGINX_PORT=80
 
   kafka:
     image: docker.io/bitnami/kafka:3.4
@@ -48,6 +48,8 @@ services:
       - '2222:2222'
 
 volumes:
+  web_data:
+    driver: local
   gitea_db_data:
     driver: local
   gitea_app_data:
