@@ -31,9 +31,9 @@ services:
     environment:
       - POSTGRESQL_DATABASE=bitnami_gitea
       - POSTGRESQL_USERNAME=bn_gitea
-     - POSTGRESQL_PASSWORD=bitnami1
-     # ALLOW_EMPTY_PASSWORD is recommended only for development.
-     - ALLOW_EMPTY_PASSWORD=yes
+      - POSTGRESQL_PASSWORD=bitnami1
+      # ALLOW_EMPTY_PASSWORD is recommended only for development.
+      - ALLOW_EMPTY_PASSWORD=yes
   gitea_app:
     image: docker.io/bitnami/gitea:1
     volumes:
